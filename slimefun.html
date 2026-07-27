@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slimefun (Full Guide) - Europolit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #ff8800;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .content-box {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #000;
+            border-bottom: 3px solid #ff8800;
+            padding-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3.sub-heading {
+            font-size: 17px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #ff8800;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .rule-section {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #ff8800;
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .rule-item {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .rule-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .rule-num {
+            font-weight: 700;
+            color: #000;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        th {
+            background: #222;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:not(:last-child) td {
+            border-bottom: 1px solid #eee;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63384;
+            font-size: 14px;
+        }
+
+        .allowed-box {
+            background: #eafaf1;
+            border: 1px solid #a3e4d7;
+            border-left: 4px solid #2ecc71;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #155724;
+        }
+
+        .notes-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #ffa000;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+
+        .notes-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #b78103;
+        }
+
+        .notes-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .notes-box li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .toc {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            padding: 20px 25px;
+            margin-bottom: 10px;
+        }
+
+        .toc-title {
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .toc ol {
+            padding-left: 20px;
+            columns: 2;
+            -webkit-columns: 2;
+        }
+
+        .toc li {
+            font-size: 14.5px;
+            color: #555;
+            margin-bottom: 6px;
+            break-inside: avoid;
+        }
+
+        .toc a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .toc a:hover {
+            color: #ff8800;
+        }
+
+        .addon-tag {
+            display: inline-block;
+            background: #fff3e0;
+            color: #ff8800;
+            border: 1px solid #ffd699;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .content-box { padding: 30px 20px; }
+            h1 { font-size: 26px; }
+            table, th, td { font-size: 14px; }
+            .toc ol { columns: 1; -webkit-columns: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <div class="content-box">
+            <h1>🧪⚡ Slimefun — от А до Я: механика и все аддоны сервера</h1>
+            <p>Полное руководство по <strong>Slimefun</strong> и всем установленным на сервере аддонам: как устроена электросеть, откуда берутся материалы, как работает прогрессия и что добавляет каждый аддон.</p>
+
+            <div class="toc">
+                <div class="toc-title">📑 Содержание</div>
+                <ol>
+                    <li><a href="#s1">Что такое Slimefun и книга-гайд</a></li>
+                    <li><a href="#s2">Исследования (RP) и прогрессия</a></li>
+                    <li><a href="#s3">Материалы: от руды до сплава</a></li>
+                    <li><a href="#s4">Электричество: как устроена энергосеть</a></li>
+                    <li><a href="#s5">Карго-сеть: автоматизация и логистика</a></li>
+                    <li><a href="#s6">Аддоны: техника и машины</a></li>
+                    <li><a href="#s7">Аддоны: энергетика</a></li>
+                    <li><a href="#s8">Аддоны: хранение и логистика</a></li>
+                    <li><a href="#s9">Аддоны: магия и алхимия</a></li>
+                    <li><a href="#s10">Аддоны: еда и фермерство</a></li>
+                    <li><a href="#s11">Аддоны: космос</a></li>
+                    <li><a href="#s12">Аддоны: утилиты и интерфейс</a></li>
+                    <li><a href="#s13">Сторонние плагины, совместимые со Slimefun</a></li>
+                </ol>
+            </div>
+
+            <!-- Раздел 1 -->
+            <h2 id="s1">📖 Раздел 1: Что такое Slimefun и книга-гайд</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">Суть плагина:</span> Slimefun превращает ванильный сервер в подобие модпака — добавляет сотни новых предметов, блоков, машин и механик (техника + магия), не заставляя игроков ставить никакие моды на клиент.</div>
+                <div class="rule-item"><span class="rule-num">Две ветки развития:</span> Игрок сам решает, во что вкладываться — в <em>технологии</em> (электричество, машины, андроиды, реакторы) или в <em>магию</em> (Древний алтарь, зачарованный верстак, посохи и зелья). Ветки не исключают друг друга.</div>
+                <div class="rule-item"><span class="rule-num">Книга-гайд:</span> Команда <code>/sf guide</code> (или предмет "Slimefun Guide" в инвентаре по умолчанию) открывает главное меню — навигатор по всем категориям.</div>
+                <div class="rule-item"><span class="rule-num">Вкладки (категории):</span> Каждая категория в гайде — это отдельная "вкладка" со своим набором блоков и предметов: Basic Machines, Energy and Electricity, Weapons and Armor, Magic Workbench, Ancient Altar, Androids, Cargo, Backpacks, GPS-передатчики, Food and Farming и т.д. Каждый аддон добавляет к этому списку свои собственные вкладки — например, у ExoticGarden будет своя категория растений, у Galactifun — своя категория с планетами.</div>
+                <div class="rule-item"><span class="rule-num">Как устроена вкладка:</span> Внутри каждой категории — сетка предметов. Клик по предмету открывает его рецепт крафта, а если предмет ещё не изучен — стоимость исследования (RP) и требуемый уровень опыта.</div>
+            </div>
+
+            <!-- Раздел 2 -->
+            <h2 id="s2">🔬 Раздел 2: Исследования (RP) и прогрессия</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">Research Points (RP):</span> Почти каждый рецепт в Slimefun закрыт исследованием. Чтобы открыть рецепт навсегда, нужно накопить очки опыта (уровни игрока) и потратить их прямо из книги-гайда, кликнув на предмет.</div>
+                <div class="rule-item"><span class="rule-num">Разблокировка — навсегда:</span> Один раз изученный рецепт остаётся открытым для игрока постоянно (привязка к игроку, а не к предмету) — уровни тратятся один раз.</div>
+                <div class="rule-item"><span class="rule-num">Прогрессия тиров:</span> Инструменты, броня и сплавы идут по нарастающей: от простых (базовые сплавы вроде бронзы) до продвинутых (закалённые металлы, дамасская сталь и т.д.) — каждый следующий тир прочнее и требует более редких материалов и более высокого исследования.</div>
+                <div class="rule-item"><span class="rule-num">Multitool / Мультитул:</span> Один инструмент, совмещающий кирку+топор+лопату, удобен на старте, но по эффективности уступает специализированным продвинутым инструментам.</div>
+            </div>
+
+            <!-- Раздел 3 -->
+            <h2 id="s3">⛏️ Раздел 3: Материалы — от руды до сплава</h2>
+            <div class="rule-section">
+                <p>Почти вся техническая часть Slimefun завязана на переработке ресурсов по цепочке:</p>
+                <table>
+                    <tr>
+                        <th>Этап</th>
+                        <th>Машина</th>
+                        <th>Что происходит</th>
+                    </tr>
+                    <tr>
+                        <td>Руда → Пыль</td>
+                        <td>Ore Crusher / Electric Ore Grinder</td>
+                        <td>Дробит руду, из одного блока получается 2 пыли — фактически удваивает руду.</td>
+                    </tr>
+                    <tr>
+                        <td>Гравий → Просеянная руда</td>
+                        <td>Automated Panning Machine</td>
+                        <td>Превращает гравий в Sifted Ore, кремень и глину.</td>
+                    </tr>
+                    <tr>
+                        <td>Просеянная руда → Пыль</td>
+                        <td>Ore Washer / Electric Dust Washer</td>
+                        <td>Промывает Sifted Ore, случайно выдавая один из видов пыли металлов.</td>
+                    </tr>
+                    <tr>
+                        <td>Пыль → Слиток</td>
+                        <td>Smeltery / Electric Ingot Factory</td>
+                        <td>Плавит пыль в слитки, готовые к крафту инструментов и брони.</td>
+                    </tr>
+                    <tr>
+                        <td>Слитки/пыль → Сплав</td>
+                        <td>Smeltery / Electric Smeltery</td>
+                        <td>Комбинирует несколько видов пыли/слитков в сплавы (бронза, сталь и т.п.) для более прочных предметов.</td>
+                    </tr>
+                </table>
+                <div class="rule-item"><span class="rule-num">Электрические версии:</span> У большинства ручных станков есть электрический аналог (Electric Ore Grinder, Electric Dust Washer, Electric Smeltery и др.) — они работают быстрее и автоматически, но требуют подключения к энергосети (см. Раздел 4).</div>
+            </div>
+
+            <!-- Раздел 4 -->
+            <h2 id="s4">⚡ Раздел 4: Электричество — как устроена энергосеть</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">Джоули (J):</span> Вся энергия в Slimefun измеряется в джоулях — это единственная единица мощности в игре.</div>
+                <div class="rule-item"><span class="rule-num">Генераторы:</span> Производят энергию из топлива с постоянной скоростью (Дж/сек) — Coal Generator, Bio Reactor, Combustion Reactor, Solar Generator, Nuclear Reactor и т.д. У каждого топлива своя "ёмкость" по времени работы.</div>
+                <div class="rule-item"><span class="rule-num">Energy Regulator (Регулятор):</span> Ядро сети. Без него энергия вообще не передаётся. В сети может быть только один регулятор, сам он энергию не хранит.</div>
+                <div class="rule-item"><span class="rule-num">Energy Connector (Коннектор):</span> Просто продлевает радиус действия сети, но ничего не хранит.</div>
+                <div class="rule-item"><span class="rule-num">Energy Capacitor (Конденсатор):</span> И продлевает сеть, и хранит избыток энергии впрок (есть 6 тиров ёмкости). При разрушении конденсатора вся накопленная в нём энергия теряется.</div>
+                <div class="rule-item"><span class="rule-num">Потребители (машины):</span> Электрические станки тратят Дж на каждую операцию. У части машин есть свой буфер энергии — но, в отличие от конденсатора, если энергия не израсходована до заполнения буфера, она сбрасывается.</div>
+                <div class="rule-item"><span class="rule-num">Радиус связи:</span> Все элементы сети должны находиться в пределах 7 блоков по прямой (без диагоналей) от регулятора/конденсатора/коннектора — иначе энергия до них не дойдёт.</div>
+                <div class="rule-item"><span class="rule-num">Мультиметр:</span> Инструмент, которым можно точно замерить количество энергии в конкретном блоке сети, не полагаясь на "прикидку по текстуре".</div>
+            </div>
+
+            <!-- Раздел 5 -->
+            <h2 id="s5">📦 Раздел 5: Карго-сеть — автоматизация и логистика</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">Cargo Manager:</span> Центральный узел карго-сети — аналог хоппера, но с гораздо большим радиусом действия и умной фильтрацией предметов.</div>
+                <div class="rule-item"><span class="rule-num">Cargo Node (входной/выходной):</span> Крепится к сундукам и машинам, забирает или вставляет в них предметы по заданным фильтрам (по типу предмета).</div>
+                <div class="rule-item"><span class="rule-num">Cargo Motor:</span> Ускоряет и приводит в движение сеть, увеличивая скорость перекачки предметов.</div>
+                <div class="rule-item"><span class="rule-num">Зачем это нужно:</span> Карго-сеть позволяет полностью автоматизировать фермы, переработку руды и производство — предметы сами едут между машинами и хранилищами без беготни игрока.</div>
+            </div>
+
+            <!-- Раздел 6 -->
+            <h2 id="s6">🔧 Раздел 6: Аддоны — техника и машины</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">AdvancedTech<span class="addon-tag">Аддон</span>:</span> Добавляет ручные буры (handheld diggers) для быстрой добычи и новые улучшенные солнечные панели, а также Command Hub — центр, показывающий все подключённые к нему устройства.</div>
+                <div class="rule-item"><span class="rule-num">FluffyMachines<span class="addon-tag">Аддон</span>:</span> Машины и генераторы для ранней и поздней игры, чтобы автоматизация была веселее: Auto Crafting Table (автокрафт), Auto Ancient Altar (авто-алтарь) и карго-узлы для эндер-сундуков.</div>
+                <div class="rule-item"><span class="rule-num">FoxyMachines<span class="addon-tag">Аддон</span>:</span> Новые инструменты, машины и оружие — среди них Improvement Forge (кузница улучшений), лечащий лук и миксер зелий.</div>
+                <div class="rule-item"><span class="rule-num">InfinityExpansion<span class="addon-tag">Аддон</span>:</span> Крупный эндгейм-аддон с десятками новых машин и рецептов для игроков, которые уже прошли весь ванильный Slimefun и хотят более глубокую прогрессию.</div>
+                <div class="rule-item"><span class="rule-num">FNAmplifications (FN Amplificore)<span class="addon-tag">Аддон</span>:</span> Объединяет сразу несколько модулей — солнечный генератор, генератор материалов, машинерию и усилители мощности, плюс добавляет гемы, посохи, колчаны и шестерни.</div>
+                <div class="rule-item"><span class="rule-num">ExtraTools<span class="addon-tag">Аддон</span>:</span> Набор простых, но полезных инструментов, которые не обязательны, но заметно упрощают жизнь на сервере со Slimefun.</div>
+            </div>
+
+            <!-- Раздел 7 -->
+            <h2 id="s7">🔋 Раздел 7: Аддоны — энергетика</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">EcoPower<span class="addon-tag">Аддон</span>:</span> Делает упор на "зелёную" и возобновляемую энергетику — ветряные и паровые турбины, и даже возможность добывать энергию из ударов молний.</div>
+                <div class="rule-item"><span class="rule-num">BetterReactor (Better Nuclear Generator)<span class="addon-tag">Аддон</span>:</span> Добавляет более крупный и реалистичный ядерный реактор для мощной генерации энергии — с датчиком нагрева (Heat Sensor) и аварийной остановкой реактора (Reactor Stop) через редстоун-сигнал и графит.</div>
+            </div>
+
+            <!-- Раздел 8 -->
+            <h2 id="s8">🗄️ Раздел 8: Аддоны — хранение и логистика</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">PrivateStorage<span class="addon-tag">Аддон</span>:</span> Новые виды сундуков — взрывоустойчивые, приватные (доступны только владельцу) и деревянные сундуки под каждый тип древесины в игре.</div>
+                <div class="rule-item"><span class="rule-num">Networks<span class="addon-tag">Аддон</span>:</span> Продвинутая система массового хранения в стиле Applied Energistics / Refined Storage — работает поверх обычного карго Slimefun и позволяет подключить огромные объёмы хранилища к одной сети без десятков отдельных сундуков.</div>
+                <div class="rule-item"><span class="rule-num">CompressionCraft<span class="addon-tag">Аддон</span>:</span> Аддон на "объём" — bulk-хранилище, которое сжимает большие стеки предметов в компактные блоки для хранения и транспортировки.</div>
+                <div class="rule-item"><span class="rule-num">BetterChests<span class="addon-tag">Аддон</span>:</span> Добавляет много больших сундуков увеличенного размера поверх стандартных сундуков Slimefun.</div>
+            </div>
+
+            <!-- Раздел 9 -->
+            <h2 id="s9">🪄 Раздел 9: Аддоны — магия и алхимия</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">AlchimiaVitae<span class="addon-tag">Аддон</span>:</span> Альтернативные способы получения сплавов и углерода, магические модификации инструментов и мощные зелья — расширяет магическую ветку Slimefun новыми рецептами через Древний алтарь и зачарованный верстак.</div>
+            </div>
+
+            <!-- Раздел 10 -->
+            <h2 id="s10">🌾 Раздел 10: Аддоны — еда и фермерство</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">ExoticGarden<span class="addon-tag">Аддон</span>:</span> Добавляет множество растений, деревьев и еды — от выращивания сливовых деревьев до крафта сложных многосоставных блюд.</div>
+                <div class="rule-item"><span class="rule-num">Cultivation<span class="addon-tag">Аддон</span>:</span> Эмулирует механики модов Mystical Agriculture и Cooking for Blockheads — 90+ растений, из которых можно фармить руды и дропы мобов, десятки кустов и деревьев, а также готовка на собственной кухне с эффектами вроде лечения, зелий и телепортации.</div>
+                <div class="rule-item"><span class="rule-num">Gastronomicon<span class="addon-tag">Аддон</span>:</span> Сотни новых блюд, которые можно приготовить и съесть — расширяет кулинарную часть Slimefun в чистом виде.</div>
+                <div class="rule-item"><span class="rule-num">SlimyTreeTaps<span class="addon-tag">Аддон</span>:</span> Добавляет краны для деревьев (Tree Taps) и каучук — альтернативный способ получения пластиковых листов без переработки нефти.</div>
+            </div>
+
+            <!-- Раздел 11 -->
+            <h2 id="s11">🚀 Раздел 11: Аддоны — космос</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">Galactifun<span class="addon-tag">Аддон</span>:</span> Аддон в духе ClayTech и мода Galacticraft — добавляет несколько планет, ракеты для полётов, космические станции и полноценную прогрессию по освоению космоса.</div>
+            </div>
+
+            <!-- Раздел 12 -->
+            <h2 id="s12">🛠️ Раздел 12: Аддоны — утилиты и интерфейс</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">SlimeHUD<span class="addon-tag">Аддон</span>:</span> Показывает всплывающую информацию о блоке, на который смотрит игрок (в духе мода WAILA) — расширенная и настраиваемая версия подобных аддонов.</div>
+                <div class="rule-item"><span class="rule-num">SFCalc<span class="addon-tag">Аддон</span>:</span> Добавляет команду-калькулятор — считает, сколько базовых ресурсов нужно, чтобы скрафтить любой конкретный предмет Slimefun, включая все промежуточные звенья цепочки.</div>
+                <div class="rule-item"><span class="rule-num">SfChunkInfo<span class="addon-tag">Аддон</span>:</span> Одной командой сканирует чанк и показывает, сколько и каких блоков Slimefun в нём стоит — полезно для поиска лагающих ферм и машин.</div>
+                <div class="rule-item"><span class="rule-num">SlimeFrame<span class="addon-tag">Аддон</span>:</span> Аддон в стиле Warframe — добавляет новые машины, генераторы и систему реликвий поверх обычного Slimefun.</div>
+            </div>
+
+            <!-- Раздел 13 -->
+            <h2 id="s13">🔗 Раздел 13: Сторонние плагины, совместимые со Slimefun</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">Brewery:</span> Не является аддоном Slimefun, но официально поддерживает интеграцию — в рецептах пива и настоек можно использовать предметы из Slimefun и его аддонов (в т.ч. ExoticGarden).</div>
+                <div class="rule-item"><span class="rule-num">PlaceholderAPI:</span> Slimefun сам добавляет свои плейсхолдеры (уровень исследований, статистика игрока и т.д.), которые можно выводить через табло, чат и другие плагины сервера.</div>
+            </div>
+
+            <div class="notes-box">
+                <h3>⚠️ Важные примечания:</h3>
+                <ul>
+                    <li>Часть категорий и предметов в книге-гайде появляется только после установки соответствующего аддона — если вкладки не видно, возможно, аддон ещё не выдаёт вам доступ по исследованию.</li>
+                    <li>Электрические машины без энергии просто не работают — прежде чем жаловаться на "сломанный" станок, проверьте регулятор, конденсаторы и радиус в 7 блоков.</li>
+                    <li>Разрушение конденсатора или капчур-блока обнуляет всю накопленную в нём энергию — стройте энергосети аккуратно.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

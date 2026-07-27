@@ -3,71 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Europolit - Политический Сервер</title>
+    <title>Europolit - Главная</title>
     <style>
-        /* Базовые стили */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body, html {
-            height: 100%;
+        body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f0f0f0; /* Цвет фона как на скрине */
+            background-color: #f0f0f0;
             color: #333;
-            overflow: hidden; /* Отключаем стандартный скролл, будем управлять им */
+            line-height: 1.6;
         }
 
-        /* Контейнер для горизонтального скролла */
-        #main-container {
-            display: flex;
-            width: 300%; /* Делаем контейнер в 3 раза шире экрана (на 3 слайда) */
-            height: 100%;
-            transition: transform 0.6s ease-in-out;
-            will-change: transform;
+        /* Главный контейнер по центру */
+        .wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        /* Стили для каждого слайда */
-        .slide {
-            width: 100vw; /* Каждый слайд занимает всю ширину экрана */
-            height: 100vh; /* Каждый слайд занимает всю высоту экрана */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
-        }
-
-        /* Белый прямоугольник (теперь это контент-блок внутри слайда) */
+        /* Белый блок с контентом */
         .content-box {
             background: white;
             padding: 60px;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            max-width: 800px;
-            width: 100%;
-            position: relative;
+            margin-bottom: 30px;
         }
 
-        /* Типографика (как на скрине, но адаптированная) */
         h1 {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #000;
         }
 
+        h2 {
+            font-size: 24px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #111;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 8px;
+        }
+
         p {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 18px;
+            margin-bottom: 20px;
             font-weight: 300;
         }
 
+        /* Ссылки-инлайны */
         a.link {
-            font-size: 20px;
-            color: #ff8800; /* Оранжевый цвет ссылки */
+            font-size: 18px;
+            color: #ff8800;
             text-decoration: none;
             border-bottom: 1px solid #ff8800;
             transition: opacity 0.3s ease;
@@ -77,158 +69,85 @@
             opacity: 0.7;
         }
 
-        /* Стрелки навигации */
-        .nav-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 40px;
-            color: #ccc;
-            cursor: pointer;
-            user-select: none;
-            z-index: 10;
-            transition: color 0.3s ease;
-            padding: 20px;
+        /* Сетка для гайдов (карточки) */
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        .nav-arrow:hover {
-            color: #333;
+        .guide-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            padding: 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
         }
 
-        .arrow-left { left: 10px; }
-        .arrow-right { right: 10px; }
-
-        /* Индикаторы слайдов (точки внизу) */
-        .slide-indicators {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
+        .guide-card:hover {
+            border-color: #ff8800;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
         }
 
-        .indicator {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #ddd;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
+        .guide-card h3 {
+            font-size: 20px;
+            color: #000;
+            margin-bottom: 10px;
         }
 
-        .indicator.active {
-            background-color: #aaa;
+        .guide-card p {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 0;
         }
 
-        /* Адаптация под мобильные */
         @media (max-width: 768px) {
-            h1 { font-size: 36px; }
-            p { font-size: 18px; }
             .content-box { padding: 30px; }
+            h1 { font-size: 32px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Основной контейнер, который будет двигаться -->
-    <div id="main-container">
-
-        <!-- СЛАЙД 1: Главная (почти как на скрине) -->
-        <div class="slide" id="slide-1">
-            <div class="content-box">
-                <h1>Europolit</h1>
-                <p>Добро пожаловать на наш политический сервер.<br>
-                Здесь вы можете строить государства, участвовать в выборах и вершить историю.</p>
-                <a href="#" class="link">онлайн карта европолита</a>
-
-                <!-- Стрелка вправо -->
-                <div class="nav-arrow arrow-right" onclick="nextSlide()">&#8250;</div>
-            </div>
+    <div class="wrapper">
+        <!-- Блок 1: О сервере -->
+        <div class="content-box">
+            <h1>Europolit</h1>
+            <p>Доброжайший политический сервер Minecraft. Строй города, создавай законы, участвуй в баталиях и развивай свою экономику.</p>
+            <p><strong>IP сервера:</strong> play.europolit.net (1.21.1)</p>
+            <a href="https://map.europolit.net" class="link" target="_blank">открыть онлайн карту европолита</a>
         </div>
 
-        <!-- СЛАЙД 2: Базовая информация (Вертикальный скролл) -->
-        <div class="slide" id="slide-2">
-            <div class="content-box" style="overflow-y: auto; max-height: 90vh;">
-                <h1>Базовая информация</h1>
-                <p>Что делает наш сервер уникальным:</p>
-                <p><strong>1. Управление:</strong> Реальная демократия. Вы можете создать свою партию и побороться за пост президента. Либо стать диктатором, если хватит сил удержать власть.</p>
-                <p><strong>2. Экономика:</strong> Полностью проработанная система торговли. Добывайте ресурсы, открывайте бизнесы и становитесь монополистом.</p>
-                <p><strong>3. Войны:</strong> Дипломатия — это хорошо, но иногда приходится решать конфликты силой. У нас есть честная система рейдов и войны.</p>
-                <p><strong>4. Правила:</strong> Главное правило — будьте интересным игроком. Отыгрывайте свою роль, создавайте интриги.</p>
-                <p><strong>5. Технологии:</strong> Сервер работает на Purpur 1.21.1, оптимизирован так, что даже во время выборов лагать не будет.</p>
-                <p><strong>6. Сообщество:</strong> Нас уже много, мы ждем именно тебя!</p>
+        <!-- Блок 2: Подробные гайды -->
+        <div class="content-box">
+            <h2>Подробные гайды</h2>
+            <p>Выбери интересующий тебя раздел, чтобы узнать правила, механики и инструкции:</p>
 
-                <!-- Стрелки влево и вправо -->
-                <div class="nav-arrow arrow-left" onclick="prevSlide()">&#8249;</div>
-                <div class="nav-arrow arrow-right" onclick="nextSlide()">&#8250;</div>
+            <div class="guides-grid">
+                <!-- Ссылка на страницу с оружием -->
+                <a href="weapons.html" class="guide-card">
+                    <h3>⚔️ Оружие и ПВП</h3>
+                    <p>Характеристики кастомного вооружения, баланс и правила боев.</p>
+                </a>
+
+                <!-- Ссылка на страницу со Слаймфаном (или модами) -->
+                <a href="slimefun.html" class="guide-card">
+                    <h3>⚙️ Слаймфан / Механизмы</h3>
+                    <p>Гид по технической части, автофермам и запрещенным вещам.</p>
+                </a>
+
+                <!-- Ссылка на правила/политику -->
+                <a href="politics.html" class="guide-card">
+                    <h3>🏛️ Политика и Города</h3>
+                    <p>Как создать свое государство, налоги, суды и законы сервера.</p>
+                </a>
             </div>
         </div>
-
-        <!-- СЛАЙД 3: Присоединиться -->
-        <div class="slide" id="slide-3">
-            <div class="content-box">
-                <h1>Присоединяйся к нам!</h1>
-                <p>Для того чтобы начать играть, тебе потребуется:</p>
-                <p>1. Наш уникальный ресурс-пак.<br>
-                2. Аккаунт в Discord для участия в жизни сообщества.<br>
-                3. Версия игры: Java Edition 1.21.1</p>
-                <a href="#" class="link">IP-адрес сервера: play.europolit.net</a>
-                <p style="margin-top: 20px;">Приятной игры!</p>
-
-                <!-- Стрелка влево -->
-                <div class="nav-arrow arrow-left" onclick="prevSlide()">&#8249;</div>
-            </div>
-        </div>
-
     </div>
-
-    <!-- Скрипт для управления скроллом -->
-    <script>
-        let currentSlideIndex = 0;
-        const container = document.getElementById('main-container');
-        const totalSlides = 3; // У нас 3 слайда
-
-        // Функция для перемещения к нужному слайду
-        function updateSlidePosition() {
-            container.style.transform = `translateX(-${currentSlideIndex * 100}vw)`;
-        }
-
-        // Следующий слайд
-        function nextSlide() {
-            if (currentSlideIndex < totalSlides - 1) {
-                currentSlideIndex++;
-                updateSlidePosition();
-            }
-        }
-
-        // Предыдущий слайд
-        function prevSlide() {
-            if (currentSlideIndex > 0) {
-                currentSlideIndex--;
-                updateSlidePosition();
-            }
-        }
-
-        // Поддержка управления с клавиатуры
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                nextSlide();
-            } else if (e.key === 'ArrowLeft') {
-                prevSlide();
-            }
-        });
-
-        // Поддержка свайпа мышкой/тачпадом (горизонтально)
-        let startX;
-        container.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-        container.addEventListener('touchmove', e => startX = e.touches[0].clientX);
-        container.addEventListener('touchend', e => {
-            let endX = e.changedTouches[0].clientX;
-            if (startX - endX > 50) nextSlide(); // Свайп влево -> следующий
-            if (endX - startX > 50) prevSlide(); // Свайп вправо -> предыдущий
-        });
-    </script>
 
 </body>
 </html>

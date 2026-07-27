@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Правила сервера - Europolit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0; /* Чистый нейтральный фон без картинок */
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Кнопка возврата назад */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #ff8800;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .content-box {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #000;
+            border-bottom: 3px solid #ff8800;
+            padding-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Карточки для разделов правил */
+        .rule-section {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #ff8800;
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .rule-item {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .rule-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .rule-num {
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* Блок исключений / разрешений */
+        .allowed-box {
+            background: #eafaf1;
+            border: 1px solid #a3e4d7;
+            border-left: 4px solid #2ecc71;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #155724;
+        }
+
+        /* Накопительная система / примечания */
+        .notes-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #ffa000;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+
+        .notes-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #b78103;
+        }
+
+        .notes-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .notes-box li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .content-box { padding: 30px 20px; }
+            h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <a href="index.html" class="back-link">← На главную</a>
+
+        <div class="content-box">
+            <h1>📜 Правила сервера Europolit</h1>
+
+            <!-- Раздел 1 -->
+            <h2>Раздел 1: Общение и поведение</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">1.1. Агрессия и неадекватное поведение:</span> Запрещено намеренное разжигание конфликтов, «троллинг» с целью вывести собеседника из себя и агрессивное поведение. <em>(Мут на 6 часов или по ситуации)</em></div>
+                <div class="rule-item"><span class="rule-num">1.2. Оскорбления участников:</span> Запрещены любые формы прямых оскорблений, унижений и высмеивания других участников. <em>(Мут на 12 часов)</em></div>
+                <div class="rule-item"><span class="rule-num">1.3. Оскорбления родственников участников:</span> Запрещены любые формы оскорблений, упоминаний и высмеивания родственников участников. <em>(Бан 7 дней)</em></div>
+                <div class="rule-item"><span class="rule-num">1.4. Оскорбления администрации:</span> Любые выпады в сторону администрации, обесценивание их работы или призывы к бунту против модерации. <em>(Мут на 72 часа или по ситуации)</em></div>
+                <div class="rule-item"><span class="rule-num">1.5. Доксинг и конфиденциальность:</span> Публикация личных данных участников (реальные имена без согласия челов, адреса, номера телефонов, ссылки на профили в соцсетях без согласия владельца). <em>(Бан 3 месяца)</em></div>
+                <div class="rule-item"><span class="rule-num">1.6. Флуд и спам:</span> Массовая рассылка однотипных сообщений, бессмысленных наборов символов или захламление чата стикерами (более 5 подряд). <em>(Мут на 6 часов)</em></div>
+                <div class="rule-item"><span class="rule-num">1.7. Разжигание ненависти:</span> Запрещено использование дискриминационных высказываний по национальному, расовому, политическому или религиозному признаку. <em>(Мут 24 часа)</em></div>
+                <div class="rule-item"><span class="rule-num">1.8. Реклама и ссылки:</span> Запрещена реклама сторонних серверов, каналов, услуг или товаров без согласования с владельцем. Распространение дезинформации о сервере, подозрительных ссылок или сомнительного ПО. <em>(Бан 3–6 месяцев)</em></div>
+                <div class="rule-item"><span class="rule-num">1.9. Пропаганда и деструктив:</span> Запрещена пропаганда наркотиков, суицида, экстремистских идеологий вне рамок полита и призывы к насилию. <em>(Мут или бан по ситуации)</em></div>
+            </div>
+
+            <!-- Раздел 2 -->
+            <h2>Раздел 2: Техническая часть и анти-чит</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">2.1. Игровое преимущество:</span> Полностью запрещено наличие и использование любых модификаций, ресурс паков, клиентов и др. предоставляющих нечестное преимущество. Сюда входят: X-Ray, fly-хаки, макросы (в т.ч. на PvP), боты для автоматизации действий, «киллаура» и другие инструменты. <em>(Бан 3–6 месяцев)</em></div>
+                <div class="rule-item"><span class="rule-num">2.2. Эксплуатация систем:</span> Запрещено использование любых ошибок и недоработок сервера, «багов», дюпов предметов или создание «лаг-машин» (устройств, вызывающих намеренное падение TPS и производительности). <em>(Бан 3–6 месяцев)</em></div>
+                <div class="rule-item"><span class="rule-num">2.3. Твинки:</span> Твинки запрещены на сервере. <em>(Бан твинка навсегда)</em></div>
+                <div class="rule-item"><span class="rule-num">2.4. Безопасность аккаунтов:</span> Запрещён взлом или несогласованный с владельцем вход в аккаунт игрока. <em>(Бан 3–6 месяцев)</em></div>
+                <div class="rule-item"><span class="rule-num">2.5. ВПН и прокси:</span> Любое намеренное искажение данных, отправляемых игровым клиентом на сервер (попытки «обмануть» анти-чит путем VPN или прокси). <em>(Бан айпи, основной акк 3–6 месяцев)</em></div>
+                
+                <div class="allowed-box">
+                    <strong>Разрешено:</strong> Litematica, ReplayMod, FreeCam только для скриншотов; автокликеры для добычи ресурсов.
+                </div>
+            </div>
+
+            <!-- Раздел 3 -->
+            <h2>Раздел 3: Строительство и границы</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">3.1. Хаотичные и анархичные постройки:</span> Запрещено возведение построек, вроде лавакастов, а также любых других конструкций из жидкостей, призванных намеренно исказить ландшафт, заблокировать доступ к территории или затруднить передвижение других игроков. <em>(Бан 3–6 месяцев)</em></div>
+                <div class="rule-item"><span class="rule-num">3.2. Границы стран:</span> Запрещено специально блокировать, мешать, окружать поселения приватом другого города. <em>(Бан 3 месяца и(или) удаление города)</em></div>
+            </div>
+
+            <!-- Раздел 4 -->
+            <h2>Раздел 4: Войны и политика</h2>
+            <div class="rule-section">
+                <div class="rule-item"><span class="rule-num">4.1. Удаление владений:</span> Участникам запрещено распускать города или нации, а также удалять их до завершения активной фазы конфликта. <em>(Бан лидера на 7 дней)</em></div>
+                <div class="rule-item"><span class="rule-num">4.2. Бегство и слияние:</span> Запрещено создание новых городов/наций, а также объединение с другими городами/нациями, пока идет процесс подготовки (оправдания) или сама война. <em>(Удаление города)</em></div>
+                <div class="rule-item"><span class="rule-num">4.3. Саботаж территорий:</span> Запрещено намеренно убирать приваты в зоне военных действий или изменять типы чанков так, чтобы блокировать захватчика. <em>(Удаление города)</em></div>
+                <div class="rule-item"><span class="rule-num">4.4. Уклонение:</span> Запрещено использовать любые методы для затягивания войны или избегания её финала. <em>(Удаление города)</em></div>
+
+                <div class="allowed-box">
+                    <strong>Исключение:</strong> До начала войны разрешается перенос главного чанка (столицы) и временное отключение PvP, если это не используется для намеренного уклонения от боя.
+                </div>
+            </div>
+
+            <!-- Накопительная система -->
+            <div class="notes-box">
+                <h3>⚠️ Накопительная система и примечания:</h3>
+                <ul>
+                    <li><strong>3 мута</strong> = бан на неделю.</li>
+                    <li><strong>Систематическое нарушение правил</strong> = бан 3-6 месяцев.</li>
+                    <li><strong>Примечание:</strong> при выявленных дополнительных нарушениях после получения наказания вы можете получить доп. срок бана или мута.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

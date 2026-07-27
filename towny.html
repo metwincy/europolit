@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Города и Нации - Europolit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #ff8800;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .content-box {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #000;
+            border-bottom: 3px solid #ff8800;
+            padding-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .rule-section {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #ff8800;
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .rule-item {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .rule-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .rule-num {
+            font-weight: 700;
+            color: #000;
+        }
+
+        /* Таблицы команд */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 15px;
+        }
+
+        th {
+            background: #222;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        tr:not(:last-child) td {
+            border-bottom: 1px solid #eee;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63384;
+            font-size: 14px;
+        }
+
+        .allowed-box {
+            background: #eafaf1;
+            border: 1px solid #a3e4d7;
+            border-left: 4px solid #2ecc71;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-top: 15px;
+            font-size: 15px;
+            color: #155724;
+        }
+
+        .notes-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #ffa000;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+
+        .notes-box h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #b78103;
+        }
+
+        .notes-box ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .notes-box li {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .content-box { padding: 30px 20px; }
+            h1 { font-size: 28px; }
+            table, th, td { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <a href="index.html" class="back-link">← На главную</a>
+
+        <div class="content-box">
+            <h1>🏛️ Города и Нации (Towny Guide)</h1>
+            <p>Плагин <strong>Towny</strong> — это основа основ нашего политического сервера. Он отвечает за приваты территорий, безопасность ваших ресурсов, развитие городов и объединение их в могущественные нации. Ниже собран полный путеводитель для новичков.</p>
+
+            <!-- Раздел 1 -->
+            <h2>Раздел 1: Что такое чанки и как работает приват?</h2>
+            <div class="rule-section">
+                <p>Мир в Minecraft поделен на квадратные сектора размером 16х16 блоков от неба до бедрока — они называются <strong>чанками</strong>. В Towny приват территории происходит не по отдельным блокам или регионам (как в WorldGuard), а целыми чанками.</p>
+                <div class="rule-item"><span class="rule-num">Защита:</span> Внутри городского чанка чужие игроки не могут ломать блоки, ставить их, открывать сундуки, двери и взаимодействовать с механизмами, если у них нет прав.</div>
+                <div class="rule-item"><span class="rule-num">Аутпосты (Outpost):</span> Город может захватывать чанки, не соединенные с основной территорией (например, для добычи ресурсов или форпостов).</div>
+            </div>
+
+            <!-- Раздел 2 -->
+            <h2>Раздел 2: Создание города и управление</h2>
+            <div class="rule-section">
+                <p>Хотите основать свое поселение? Вам понадобится стартовый капитал и свободное место на карте (город нельзя ставить слишком близко к чужим приватам).</p>
+                
+                <table>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                    </tr>
+                    <tr>
+                        <td><code>/town new [название]</code></td>
+                        <td>Создать новый город в том чанке, где вы стоите (вы станете мэром).</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town add [игрок]</code></td>
+                        <td>Пригласить игрока в свой город.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town kick [игрок]</code></td>
+                        <td>Выгнать игрока из города.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town claim</code></td>
+                        <td>Купить и присоединить чанк, на котором вы стоите, к территории города.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town unclaim</code></td>
+                        <td>Убрать приват с чанка, на котором вы стоите.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town spawn</code></td>
+                        <td>Тепортироваться на спавн (точку дома) своего города.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town leave</code></td>
+                        <td>Покинуть город, в котором вы состоите.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Раздел 3 -->
+            <h2>Раздел 3: Налоги и банк города</h2>
+            <div class="rule-section">
+                <p>Город требует ежедневных затрат на содержание. Если в городском банке закончится валюта, город перестанет существовать (слетит приват со всех чанков)!</p>
+                <div class="rule-item"><span class="rule-num">Налог на жителей:</span> Мэр может установить ежедневный налог с каждого жителя города, который автоматически списывается в казну.</div>
+                <div class="rule-item"><span class="rule-num">Пополнение банка:</span> Каждый игрок может положить деньги в казну города, чтобы помочь его развитию.</div>
+
+                <table>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                    </tr>
+                    <tr>
+                        <td><code>/town deposit [сумма]</code></td>
+                        <td>Внести деньги со своего баланса в казну города.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town withdraw [сумма]</code></td>
+                        <td>Снять деньги из казны города (доступно мэру и доверенным лицам).</td>
+                    </tr>
+                    <tr>
+                        <td><code>/town set taxes [сумма]</code></td>
+                        <td>Установить ежедневный налог с каждого жителя.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Раздел 4 -->
+            <h2>Раздел 4: Нации (Объединение городов)</h2>
+            <div class="rule-section">
+                <p>Когда ваш город окрепнет, несколько городов могут объединиться в одну <strong>Нацию</strong>. Нация дает общую политику, чат и возможность вести масштабные войны против других государств.</p>
+
+                <table>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                    </tr>
+                    <tr>
+                        <td><code>/nation new [название] [имя_города]</code></td>
+                        <td>Создать новую нацию (нужно быть мэром столицы).</td>
+                    </tr>
+                    <tr>
+                        <td><code>/nation add [город]</code></td>
+                        <td>Принять другой город в состав своей нации.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/nation leave</code></td>
+                        <td>Выйти городом из состава нации.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/nation</code></td>
+                        <td>Посмотреть информацию о вашей нации и входящих в нее городах.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Раздел 5 -->
+            <h2>Раздел 5: Полезные общие команды</h2>
+            <div class="rule-section">
+                <p>Эти команды помогут вам ориентироваться на карте и узнавать информацию о чужих владениях:</p>
+
+                <table>
+                    <tr>
+                        <th>Команда</th>
+                        <th>Описание</th>
+                    </tr>
+                    <tr>
+                        <td><code>/town</code></td>
+                        <td>Посмотреть общую информацию о вашем городе.</td>
+                    </tr>
+                    <tr>
+                        <td><code>/towny map</code></td>
+                        <td>Показать в чате мини-карту чанков (где чья территория).</td>
+                    </tr>
+                    <tr>
+                        <td><code>/resident</code></td>
+                        <td>Посмотреть информацию о вашем персонаже (в каких городах состоите).</td>
+                    </tr>
+                    <tr>
+                        <td><code>/plot</code></td>
+                        <td>Управление отдельными участками (плотами) внутри города (продажа игрокам и т.д.).</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="allowed-box">
+                <strong>Совет новичку:</strong> Не пытайтесь сразу захватить полкарты. Сначала найдите надежных союзников, постройте фермы, настройте защиту и накопите валюту для оплаты содержания чанков!
+            </div>
+
+            <!-- Важные примечания -->
+            <div class="notes-box">
+                <h3>⚠️ Важно знать:</h3>
+                <ul>
+                    <li>Следите за балансом города. Уведомления о нехватке средств выводятся в чат.</li>
+                    <li>Мэр может назначать помощников (команда <code>/town assistant add [игрок]</code>), которые могут помогать управлять приватами.</li>
+                    <li>Внимательно читайте правила застройки — анархичные постройки в городах запрещены.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

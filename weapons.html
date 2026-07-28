@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Огнестрельное оружие (Full Guide) - Europolit</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wrapper { max-width: 950px; margin: 40px auto; padding: 0 20px; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #ff8800;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover { opacity: 0.7; }
+
+        .content-box {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+            border-bottom: 3px solid #ff8800;
+            padding-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 21px;
+            margin-top: 38px;
+            margin-bottom: 12px;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        p { margin-bottom: 15px; font-size: 16px; color: #444; }
+
+        .rule-section {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #ff8800;
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .rule-item { margin-bottom: 12px; font-size: 16px; color: #444; }
+        .rule-item:last-child { margin-bottom: 0; }
+        .rule-num { font-weight: 700; color: #000; }
+
+        .cat-block {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+
+        .cat-head {
+            padding: 10px 20px;
+            font-weight: 700;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        .cat-block.pistols .cat-head { background: #546e7a; }
+        .cat-block.smg .cat-head { background: #5c6bc0; }
+        .cat-block.rifles .cat-head { background: #ff8800; }
+        .cat-block.sniper .cat-head { background: #2e7d32; }
+        .cat-block.shotguns .cat-head { background: #8d6e63; }
+        .cat-block.mg .cat-head { background: #c62828; }
+        .cat-block.launchers .cat-head { background: #b71c1c; }
+        .cat-block.scifi .cat-head { background: #00838f; }
+        .cat-block.nades .cat-head { background: #6d4c41; }
+
+        ul.item-list { list-style: none; padding: 14px 22px; }
+
+        ul.item-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #e5e5e5;
+            font-size: 15.5px;
+            color: #444;
+        }
+
+        ul.item-list li:last-child { border-bottom: none; }
+
+        ul.item-list li .item-name {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .notes-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #ffa000;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+
+        .notes-box h3 { font-size: 18px; margin-bottom: 10px; color: #b78103; }
+        .notes-box ul { list-style-type: disc; padding-left: 20px; }
+        .notes-box li { font-size: 15px; margin-bottom: 8px; color: #555; }
+
+        .excluded-box {
+            background: #ffebee;
+            border: 1px solid #ffcdd2;
+            border-left: 4px solid #e53935;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-top: 12px;
+            font-size: 15px;
+            color: #5d1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .content-box { padding: 30px 20px; }
+            h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <a href="index.html" class="back-link">← На главную</a>
+
+    <div class="content-box">
+        <h1>🔫 Огнестрельное оружие</h1>
+        <p>Полный разбор арсенала QualityArmory на сервере: пистолеты, автоматы, винтовки, тяжёлое вооружение, гранаты и даже фантастическое лазерное/плазменное оружие.</p>
+
+        <div class="rule-section">
+            <div class="rule-item"><span class="rule-num">Скорострельность:</span> у нас она повышена почти на всём стволе — большинство оружия стреляет заметно быстрее и жёстче, чем "из коробки".</div>
+            <div class="rule-item"><span class="rule-num">Урон:</span> 2-3 попадания в голову практически из любого оружия — смерть. Бой решается за секунды, цельтесь в голову.</div>
+            <div class="rule-item"><span class="rule-num">Броня:</span> защищает совсем немного. Не рассчитывайте пережить очередь в грудь только потому, что на вас надета броня.</div>
+        </div>
+
+        <div class="excluded-box">
+            <strong>Недоступно на сервере:</strong> Fatman (пусковая мини-ядерных зарядов), MK19 (автоматический гранатомёт), Homing RPG (самонаводящаяся ракетница), C4 — а из семейства M4 выдаются только версии с глушителем.
+        </div>
+
+        <h2>🔫 Пистолеты</h2>
+        <div class="cat-block pistols">
+            <div class="cat-head">Пистолеты</div>
+            <ul class="item-list">
+                <li><span class="item-name">Glock</span> — лёгкий стартовый пистолет с быстрым темпом стрельбы.</li>
+                <li><span class="item-name">Desert Eagle</span> — самый тяжёлый пистолет, один точный выстрел решает исход стычки.</li>
+                <li><span class="item-name">M1911 (SW1911)</span> — классический армейский пистолет, баланс мощности и темпа.</li>
+                <li><span class="item-name">P30</span> — компактный универсальный пистолет.</li>
+                <li><span class="item-name">CZ75</span> — надёжный и точный пистолет для среднего боя.</li>
+                <li><span class="item-name">Makarov</span> — простой и лёгкий пистолет старой школы.</li>
+                <li><span class="item-name">Mauser C96</span> — узнаваемый пистолет с деревянной рукоятью и характерным силуэтом.</li>
+                <li><span class="item-name">Magnum</span> — револьвер с высоким уроном за патрон, стреляет не быстро.</li>
+                <li><span class="item-name">FN Five-seveN</span> — скорострельный пистолет с большим магазином.</li>
+                <li><span class="item-name">Кремневый пистолет (Flintlock)</span> — историческое дульнозарядное оружие с долгой перезарядкой.</li>
+            </ul>
+        </div>
+
+        <h2>💥 Пистолеты-пулемёты (SMG/PDW)</h2>
+        <div class="cat-block smg">
+            <div class="cat-head">SMG / PDW</div>
+            <ul class="item-list">
+                <li><span class="item-name">MP5K</span> — основной автомат для ближнего боя, мягкая отдача.</li>
+                <li><span class="item-name">UZI</span> — очень быстрый темп стрельбы, эффективен вплотную.</li>
+                <li><span class="item-name">MAC-10</span> — компактный и скорострельный, но менее точный на дистанции.</li>
+                <li><span class="item-name">MP40</span> — историческая немецкая пистолет-пулемёт времён Второй мировой.</li>
+                <li><span class="item-name">Skorpion</span> — миниатюрный автомат, удобен для скрытного боя.</li>
+                <li><span class="item-name">Sten</span> — простой и дешёвый на вид британский автомат времён войны.</li>
+                <li><span class="item-name">PPSh-41</span> — советский автомат с высоким темпом стрельбы.</li>
+                <li><span class="item-name">UMP</span> — универсальный автомат, баланс урона и отдачи.</li>
+                <li><span class="item-name">FN P90</span> — компактное оружие с большим магазином, хорош против брони.</li>
+                <li><span class="item-name">Auto-9</span> — узнаваемый тяжёлый автоматический пистолет-пулемёт.</li>
+                <li><span class="item-name">That Gun</span> — необычное фирменное оружие с собственным характером отдачи и звука.</li>
+            </ul>
+        </div>
+
+        <h2>🪖 Штурмовые винтовки</h2>
+        <div class="cat-block rifles">
+            <div class="cat-head">Штурмовые и боевые винтовки</div>
+            <ul class="item-list">
+                <li><span class="item-name">AK-47</span> — мощная и надёжная винтовка среднего и дальнего боя.</li>
+                <li><span class="item-name">AKS-74U</span> — укороченная версия АК, легче в помещениях.</li>
+                <li><span class="item-name">M16</span> — точная винтовка со стабильной очередью.</li>
+                <li><span class="item-name">M4A1 (с глушителем)</span> — тихая штурмовая винтовка, не демаскирует так сильно.</li>
+                <li><span class="item-name">M4A1 Burst (с глушителем)</span> — та же винтовка с отсечкой очереди по 3 патрона для контроля отдачи.</li>
+                <li><span class="item-name">FAMAS</span> — французская винтовка с очень высоким темпом очереди.</li>
+                <li><span class="item-name">Galil</span> — универсальная израильская винтовка.</li>
+                <li><span class="item-name">FN FAL</span> — тяжёлая винтовка с высоким уроном за патрон.</li>
+                <li><span class="item-name">SG 553</span> — швейцарская винтовка с хорошей точностью.</li>
+                <li><span class="item-name">CTAR-21</span> — компактная булл-пап винтовка.</li>
+                <li><span class="item-name">AS Val</span> — бесшумная российская винтовка для скрытных операций.</li>
+                <li><span class="item-name">StG 44</span> — историческая немецкая штурмовая винтовка, одна из первых в своём роде.</li>
+                <li><span class="item-name">SKS</span> — полуавтоматический карабин, простой и надёжный.</li>
+                <li><span class="item-name">VZ58</span> — чехословацкая винтовка, похожая на АК, но легче.</li>
+                <li><span class="item-name">M1 Garand</span> — легендарная американская винтовка времён Второй мировой.</li>
+                <li><span class="item-name">Lee-Enfield</span> — британская винтовка с ручной перезарядкой болта.</li>
+            </ul>
+        </div>
+
+        <h2>🎯 Снайперские винтовки</h2>
+        <div class="cat-block sniper">
+            <div class="cat-head">Снайперки</div>
+            <ul class="item-list">
+                <li><span class="item-name">AWP</span> — культовая снайперка с мощнейшим одиночным уроном.</li>
+                <li><span class="item-name">Barrett</span> — крупнокалиберная снайперка, максимальный урон за выстрел.</li>
+                <li><span class="item-name">Dragunov</span> — полуавтоматическая снайперская винтовка, позволяет стрелять чаще болтовых аналогов.</li>
+                <li><span class="item-name">Kar98k</span> — историческая болтовая снайперка времён войны.</li>
+                <li><span class="item-name">M40</span> — болтовая снайперская винтовка, почти любое попадание решает дуэль.</li>
+            </ul>
+        </div>
+
+        <h2>💣 Дробовики</h2>
+        <div class="cat-block shotguns">
+            <div class="cat-head">Дробовики</div>
+            <ul class="item-list">
+                <li><span class="item-name">AA-12</span> — автоматический дробовик, стреляет очередями.</li>
+                <li><span class="item-name">SPAS-12</span> — классический помповый/полуавтоматический дробовик.</li>
+                <li><span class="item-name">Обрез (Sawed-off)</span> — укороченный дробовик, максимум урона в упор.</li>
+                <li><span class="item-name">Remington</span> — помповый дробовик, разбирает на короткой дистанции.</li>
+                <li><span class="item-name">Pancor Jackhammer</span> — автоматический дробовик с барабанным магазином.</li>
+                <li><span class="item-name">Vera</span> — фирменное рычажное ружьё с уникальным внешним видом и характером.</li>
+            </ul>
+        </div>
+
+        <h2>🔥 Пулемёты</h2>
+        <div class="cat-block mg">
+            <div class="cat-head">Ручные и станковые пулемёты</div>
+            <ul class="item-list">
+                <li><span class="item-name">DP-27</span> — советский ручной пулемёт с дисковым магазином.</li>
+                <li><span class="item-name">RPK</span> — ручной пулемёт на базе АК, большой боезапас.</li>
+                <li><span class="item-name">PKP (Печенег)</span> — станковый пулемёт для подавления на дистанции.</li>
+                <li><span class="item-name">Миниган</span> — многоствольный пулемёт с огромным темпом стрельбы, буквально сносит всё перед собой.</li>
+            </ul>
+        </div>
+
+        <h2>🚀 Гранатомёты, взрывчатка и огнемёт</h2>
+        <div class="cat-block launchers">
+            <div class="cat-head">Тяжёлое вооружение</div>
+            <ul class="item-list">
+                <li><span class="item-name">M79</span> — одноразрядный гранатомёт классической "переломки".</li>
+                <li><span class="item-name">M32A1</span> — револьверный гранатомёт на 6 зарядов подряд.</li>
+                <li><span class="item-name">РПГ (RPG)</span> — ракетница по постройкам и группам противников, взрыв накрывает область.</li>
+                <li><span class="item-name">Огнемёт (Flamer)</span> — поджигает всё перед собой на короткой дистанции, эффективен в замкнутом пространстве.</li>
+            </ul>
+        </div>
+
+        <h2>🎆 Гранаты</h2>
+        <div class="cat-block nades">
+            <div class="cat-head">Ручные гранаты</div>
+            <ul class="item-list">
+                <li><span class="item-name">Осколочная граната</span> — классическая граната по площади, задержка перед взрывом.</li>
+                <li><span class="item-name">Зажигательная граната</span> — оставляет очаг огня в точке падения.</li>
+                <li><span class="item-name">Коктейль Молотова</span> — разновидность зажигательной гранаты, разбивается и поджигает область при ударе.</li>
+                <li><span class="item-name">Дымовая граната</span> — не наносит урон, но ставит дымовую завесу для укрытия или отхода.</li>
+            </ul>
+            <div class="excluded-box" style="margin: 0 22px 14px;">Прокси-мина (нажимная/датчиковая мина) на сервере не выдаётся.</div>
+        </div>
+
+        <h2>🛸 Плазменное и лазерное оружие</h2>
+        <div class="cat-block scifi">
+            <div class="cat-head">Sci-Fi арсенал</div>
+            <ul class="item-list">
+                <li><span class="item-name">Alien Rifle</span> — инопланетная винтовка с энергетическими зарядами вместо пуль.</li>
+                <li><span class="item-name">Arc Gun</span> — электрическое оружие, бьёт разрядом тока по цели.</li>
+                <li><span class="item-name">Бластер (Blaster)</span> — классический sci-fi пистолет/винтовка на энергетических зарядах.</li>
+                <li><span class="item-name">Halo Alien Weapon</span> — плазменное оружие пришельцев в стиле Halo.</li>
+                <li><span class="item-name">Halo Rifle</span> — энергетическая винтовка в стиле Halo.</li>
+                <li><span class="item-name">HL2 Pulse Rifle</span> — импульсная винтовка Альянса в стиле Half-Life 2.</li>
+                <li><span class="item-name">Institute Rifle</span> — лазерная винтовка в стиле Fallout, стреляет лучом вместо пуль.</li>
+                <li><span class="item-name">Laser Rifle</span> — классическая лазерная винтовка с лучевым уроном.</li>
+            </ul>
+        </div>
+
+        <div class="notes-box">
+            <h3>💡 Полезно знать</h3>
+            <ul>
+                <li>Доступны все виды патронов и головных уборов (шапок) из QualityArmory.</li>
+                <li>При такой скорострельности перестрелки решаются за секунды — цельтесь в голову и не выходите в открытую под снайперки вроде Barrett, AWP или M40.</li>
+                <li>Плазменное/лазерное оружие визуально и по звуку отличается от обычного огнестрела, но по опасности не уступает — не стоит его недооценивать.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Транспорт (Full Guide) - Europolit</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .wrapper { max-width: 950px; margin: 40px auto; padding: 0 20px; }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #ff8800;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .back-link:hover { opacity: 0.7; }
+
+        .content-box {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #000;
+            border-bottom: 3px solid #ff8800;
+            padding-bottom: 12px;
+        }
+
+        h2 {
+            font-size: 22px;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #111;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3.tab-heading {
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #fff;
+            background: #ff8800;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 5px;
+        }
+
+        p { margin-bottom: 15px; font-size: 16px; color: #444; }
+
+        .rule-section {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #ff8800;
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .rule-item { margin-bottom: 12px; font-size: 16px; color: #444; }
+        .rule-item:last-child { margin-bottom: 0; }
+        .rule-num { font-weight: 700; color: #000; }
+
+        .vehicle-card {
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin-bottom: 16px;
+        }
+
+        .vehicle-card .vname {
+            font-size: 18px;
+            font-weight: 700;
+            color: #000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .variants {
+            display: inline-flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin: 6px 0 10px 0;
+        }
+
+        .variant-chip {
+            font-size: 12.5px;
+            font-weight: 600;
+            background: #fff3e0;
+            color: #ff8800;
+            border: 1px solid #ffd699;
+            padding: 3px 10px;
+            border-radius: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+        }
+
+        th, td { padding: 12px 15px; text-align: left; font-size: 15px; }
+        th { background: #222; color: #fff; font-weight: 600; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:not(:last-child) td { border-bottom: 1px solid #eee; }
+
+        code {
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63384;
+            font-size: 14px;
+        }
+
+        .notes-box {
+            background: #fff8e1;
+            border: 1px solid #ffe0b2;
+            border-left: 4px solid #ffa000;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+
+        .notes-box h3 { font-size: 18px; margin-bottom: 10px; color: #b78103; }
+        .notes-box ul { list-style-type: disc; padding-left: 20px; }
+        .notes-box li { font-size: 15px; margin-bottom: 8px; color: #555; }
+
+        @media (max-width: 768px) {
+            .content-box { padding: 30px 20px; }
+            h1 { font-size: 24px; }
+            table, th, td { font-size: 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <a href="index.html" class="back-link">← На главную</a>
+
+    <div class="content-box">
+        <h1>🚗 Транспорт</h1>
+        <p>Гайд по всему транспорту на сервере: как сесть, как управлять, как заправить и что делать, если технику подбили. Всего на сервере доступно <strong>15 видов транспорта</strong>, и почти у каждого есть 3 варианта раскраски/модели на выбор.</p>
+
+        <h2>🎮 Управление (общее для всех)</h2>
+        <div class="rule-section">
+            <table>
+                <tr><th>Действие</th><th>Клавиша</th></tr>
+                <tr><td>Движение</td><td><code>W A S D</code></td></tr>
+                <tr><td>Прыжок / полёт (вертолёт, метла) / джетпак / гудок</td><td><code>ПРОБЕЛ</code></td></tr>
+                <tr><td>Сменить направление поезда</td><td>Зажать <code>S</code></td></tr>
+                <tr><td>Набор/потеря высоты в самолёте</td><td>Смотреть вверх / вниз</td></tr>
+                <tr><td>Слезть с транспорта</td><td><code>SHIFT</code></td></tr>
+                <tr><td>Открыть багажник (сидя внутри)</td><td>ПКМ</td></tr>
+                <tr><td>Заправить транспорт</td><td><code>SHIFT + ПКМ по кузову</code></td></tr>
+                <tr><td>Забрать транспорт с собой</td><td><code>SHIFT + ПКМ по кузову</code></td></tr>
+                <tr><td>Бросить бомбу с самолёта / выстрелить из танка или вертолёта</td><td>ПКМ с TNT / файрчарджем в руке (если есть право)</td></tr>
+                <tr><td>Стрелять из меха</td><td>ПКМ</td></tr>
+                <tr><td>Крюк-кошка меха</td><td>ЛКМ</td></tr>
+                <tr><td>Обзор из перископа подлодки</td><td>ПКМ (выйти — пробел)</td></tr>
+            </table>
+        </div>
+
+        <div class="rule-section">
+            <div class="rule-item"><span class="rule-num">Топливо:</span> почти весь транспорт требует топливо и постепенно его расходует. Без топлива техника просто не поедет/не полетит. Метлы, плоты и парашюты — топливо не расходуют.</div>
+            <div class="rule-item"><span class="rule-num">Прочность:</span> у транспорта есть запас здоровья, он может быть повреждён. Если техника сломалась — починить её нельзя, придётся покупать новую.</div>
+            <div class="rule-item"><span class="rule-num">Багажник:</span> почти у каждого транспорта есть свой инвентарь-багажник (кроме метлы, парашюта и подлодки) — удобно возить с собой ресурсы.</div>
+            <div class="rule-item"><span class="rule-num">Пассажиры:</span> байк, машина и самолёт рассчитаны на 2 места — можно взять с собой друга.</div>
+        </div>
+
+        <h2>🚙 Наземный транспорт</h2>
+
+        <div class="vehicle-card">
+            <div class="vname">🚲 Байк (Bikes)</div>
+            <div class="variants"><span class="variant-chip">Чёрный</span><span class="variant-chip">Оранжевый</span><span class="variant-chip">Красный</span></div>
+            <p>Лёгкий и быстрый транспорт на 2 места. Может заезжать на ступеньки и лестницы и даже перепрыгивать блок высотой в один кубик — удобен для быстрых поездок по городу.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🏎️ Спорт-байк (Sport Bikes)</div>
+            <div class="variants"><span class="variant-chip">SB1</span><span class="variant-chip">SB2</span><span class="variant-chip">SB3</span></div>
+            <p>Более быстрая и агрессивная версия обычного байка — для тех, кому одной скорости обычного байка мало.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🚗 Машина (Cars)</div>
+            <div class="variants"><span class="variant-chip">Чёрная</span><span class="variant-chip">Жёлтая</span><span class="variant-chip">Пурпурная</span></div>
+            <p>Классический автомобиль на 2 места. Заезжает на ступени и лестницы, умеет ездить задним ходом, но не умеет прыгать — рассчитан на ровные дороги.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🏁 Гоночная машина (Racing Cars)</div>
+            <div class="variants"><span class="variant-chip">Жёлтая</span><span class="variant-chip">Фиолетовая</span><span class="variant-chip">Красная</span></div>
+            <p>Прокачанная версия обычной машины — заметно быстрее по прямой, отлично подходит для гонок между игроками.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🚜 Трактор (Tractors)</div>
+            <div class="variants"><span class="variant-chip">Жёлтый</span><span class="variant-chip">Красный</span><span class="variant-chip">Зелёный</span></div>
+            <p>Медленный, но крепкий рабочий транспорт — хорош для перевозки грузов по фермам и стройкам, а не для гонок.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">⛏️ Бур (Drills)</div>
+            <div class="variants"><span class="variant-chip">D1</span><span class="variant-chip">D2</span><span class="variant-chip">D3</span></div>
+            <p>Транспорт, который умеет прогрызать себе путь сквозь блоки. Из-за этого получает урон от самой добычи блоков — следи за прочностью и вовремя чини буром.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🤖 Мех (Mechas)</div>
+            <div class="variants"><span class="variant-chip">MK I</span><span class="variant-chip">MK II</span><span class="variant-chip">MK V</span></div>
+            <p>Боевой шагающий транспорт — умеет стрелять (ПКМ) и цепляться крюком-кошкой за блоки (ЛКМ), подтягиваясь к ним. Отлично подходит для передвижения по вертикали и стычек.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🚂 Поезд (Trains)</div>
+            <div class="variants"><span class="variant-chip">T1</span><span class="variant-chip">T2</span><span class="variant-chip">T3</span></div>
+            <p>Едет по рельсам, как ванильная вагонетка, но комфортнее и с багажником. Направление движения меняется зажатием <code>S</code>, пока поезд стоит на месте.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">💥 Танк (Tanks)</div>
+            <div class="variants"><span class="variant-chip">T1</span><span class="variant-chip">T2</span><span class="variant-chip">T3</span></div>
+            <p>Медленная, но живучая гусеничная машина для осад и обороны базы. Заряжается огненным зарядом (файрчарджем) — держи его в руке и стреляй ПКМ, пока сидишь внутри. Доступно только при наличии нужного права.</p>
+        </div>
+
+        <h2>🌊 Водный транспорт</h2>
+
+        <div class="vehicle-card">
+            <div class="vname">🛶 Плот (Rafts)</div>
+            <div class="variants"><span class="variant-chip">Старый</span><span class="variant-chip">Незер</span><span class="variant-chip">Пиратский</span></div>
+            <p>Простой водный транспорт без топлива — сел и поплыл. Три темы на выбор: от потрёпанного плота до пиратской лодки и незеритской версии.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🤿 Подводная лодка (Submarines)</div>
+            <div class="variants"><span class="variant-chip">S1</span><span class="variant-chip">S2</span><span class="variant-chip">S3</span></div>
+            <p>Позволяет спокойно исследовать морское дно. У подлодки есть отдельный обзор через перископ (ПКМ) — экран окрашивается в зелёный, как настоящий прибор ночного видения.</p>
+        </div>
+
+        <h2>✈️ Воздушный транспорт</h2>
+
+        <div class="vehicle-card">
+            <div class="vname">🪂 Парашют (Parachutes)</div>
+            <div class="variants"><span class="variant-chip">PC1</span><span class="variant-chip">PC2</span><span class="variant-chip">PC3</span></div>
+            <p>Не расходует топливо и не имеет багажника — просто безопасно спускает вниз с высоты, если спрыгнуть с здания или горы.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🧹 Метла (Brooms)</div>
+            <div class="variants"><span class="variant-chip">B1</span><span class="variant-chip">B2</span><span class="variant-chip">B3</span></div>
+            <p>Лёгкий летающий транспорт без расхода топлива — жми пробел, чтобы подняться выше, и лети куда захочешь в стиле волшебников.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🛩️ Самолёт (Planes)</div>
+            <div class="variants"><span class="variant-chip">P1</span><span class="variant-chip">P2</span><span class="variant-chip">P3</span></div>
+            <p>2 места, набирает высоту при разгоне (нужна "взлётная" скорость, как у настоящего самолёта), высотой управляешь, глядя вверх или вниз. С нужным правом можно сбрасывать TNT прямо в полёте.</p>
+        </div>
+
+        <div class="vehicle-card">
+            <div class="vname">🚁 Вертолёт (Helicopters)</div>
+            <div class="variants"><span class="variant-chip">H1</span><span class="variant-chip">H2</span><span class="variant-chip">H3</span></div>
+            <p>Взлетает и висит в воздухе по нажатию пробела. С нужным правом умеет стрелять ракетами (файрчардж в руке) — самый боевой из воздушного транспорта.</p>
+        </div>
+
+        <div class="notes-box">
+            <h3>💡 Полезно знать</h3>
+            <ul>
+                <li>Если транспорт заглох или ведёт себя странно — сначала проверь топливо (кроме метлы, плота и парашюта — им топливо не нужно).</li>
+                <li>Если транспорт сломался — почини́ть его нельзя, только покупать новый. Береги здоровье техники, особенно в бою.</li>
+                <li>У боевого транспорта (танк, вертолёт, самолёт, мех) снаряд — это огненный заряд (файрчардж), его нужно держать в руке при стрельбе. Стрельба/сброс бомб может быть доступны не всем — если оружие не срабатывает, дело может быть в правах, а не в баге.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
